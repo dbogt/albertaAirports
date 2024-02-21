@@ -50,7 +50,7 @@ st.header("Filtered Data by Airport")
 airports = sorted(df['Airport'].unique())
 pickAirport = st.multiselect("Pick airport(s) to filter", airports, airports)
 filterDF = df[df['Airport'].isin(pickAirport)]
-figAirport = px.bar(filterDF, x="Date", y='Alberta', color='FlightType')
+figAirport = px.bar(filterDF, x="Date", y='Value', color='Airport')
 st.plotly_chart(figAirport, use_container_width=True)
 
 #%% Flight Type Data
